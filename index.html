@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header flex">
+        <h1>Weather App</h1>
+      </div>
+      <div class="search flex">
+        <input type="text" placeholder="Search your location" maxlength="20" />
+      </div>
+      <div class="info flex">
+        <div class="location">
+          <h2></h2>
+        </div>
+
+        <div class="date">
+          <p></p>
+        </div>
+        <div class="time">
+          <p>Local time: <span></span></p>
+        </div>
+
+        <div class="condition flex">
+          <img src="" alt="" class="icon" />
+          <p class="cond"></p>
+        </div>
+
+        <div class="temperature flex">
+          <h3><span class="temp"></span><sup>°</sup></h3>
+          <h3>C</h3>
+        </div>
+
+        <div class="feels-like">
+          <p>Feels like <span class="feel"></span><sup>°</sup>C</p>
+        </div>
+      </div>
+      <div class="history flex">N/A</div>
+    </div>
+  </body>
+</html>
