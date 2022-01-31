@@ -42,7 +42,7 @@ input.addEventListener("keydown", function (listen) {
 
 function getAPI() {
   const url =
-    "http://api.weatherapi.com/v1/current.json?key=d7db22f333fc4e6aaf3110311222601&q=" +
+    "https://api.weatherapi.com/v1/current.json?key=d7db22f333fc4e6aaf3110311222601&q=" +
     city +
     "&aqi=no";
   fetch(url)
