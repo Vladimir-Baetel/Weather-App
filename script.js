@@ -1,28 +1,40 @@
 let city = "";
 
-function getLocation() {
-  const url = "https://extreme-ip-lookup.com/json/?key=XyjcKh4Jb6gAcMbyqPRc";
+// function getLocation() {
+//   const url = "http://extreme-ip-lookup.com/json/?key=XyjcKh4Jb6gAcMbyqPRc";
 
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        city = "Bucharest";
-      }
-      return response.json();
-    })
-    .catch(() => {
-      city = "Bucharest";
-    })
-    .then(() => {
-      city = data["city"];
-    });
-  console.log(city);
+//   fetch(url)
+//     .then((response) => {
+//       if (!response.ok) {
+//         city = "Bucharest";
+//       }
+//       return response.json();
+//     })
+//     .catch(() => {
+//       city = "Bucharest";
+//     })
+//     .then(() => {
+//       city = data["city"];
+//     });
+// }
+// getLocation();
+
+async function getLoc() {
+  try {
+    const url = "https://extreme-ip-lookup.com/json/?key=XyjcKh4Jb6gAcMbyqPRc";
+    const res = await fetch(url);
+    const jsonRes = await res.json();
+    city = jsonRes.city;
+  } catch (e) {
+    city = "Bucharest";
+    console.log("Location could not be acessed, default is Bucharest");
+  }
 }
-getLocation();
+getLoc();
 
 setTimeout(function () {
   getAPI();
-}, 1000);
+}, 100);
 
 const input = document.querySelector(".search > input");
 const loc = document.querySelector(".location > h2");
@@ -89,7 +101,6 @@ function getAPI() {
       icon.src = iconData;
       feel.innerHTML = feelData;
     });
-  console.log(city);
 }
 
 // TO DO:
