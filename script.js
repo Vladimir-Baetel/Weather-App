@@ -16,12 +16,13 @@ function getLocation() {
     .then(() => {
       city = data["city"];
     });
+  console.log(city);
 }
 getLocation();
 
 setTimeout(function () {
   getAPI();
-}, 500);
+}, 1000);
 
 const input = document.querySelector(".search > input");
 const loc = document.querySelector(".location > h2");
@@ -88,6 +89,7 @@ function getAPI() {
       icon.src = iconData;
       feel.innerHTML = feelData;
     });
+  console.log(city);
 }
 
 // TO DO:
