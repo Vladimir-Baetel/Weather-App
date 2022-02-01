@@ -43,7 +43,7 @@ input.addEventListener("keydown", function (e) {
 });
 
 function searchHistory() {
-  const maxHistoryLength = 6;
+  const maxHistoryLength = 5;
   const history = JSON.parse(localStorage.getItem("searchHistory") || "[]");
   const isHistoryMaxed = history.length === maxHistoryLength;
   const workingHistory = isHistoryMaxed ? history.slice(1) : history;
